@@ -3,8 +3,8 @@
 Co.Lab is a collaborative code editor that allows two or more users to edit code in real-time in the same "room". It features a VS Code-like interface with mock AI autocomplete.
 
 ## 🌐 Live Demo
-- **App:** [https://co.lab.iamvivek.cloud/](https://co.lab.iamvivek.cloud/)
-- **API:** [https://api.co.lab.iamvivek.cloud/](https://api.co.lab.iamvivek.cloud/)
+- **App:** [https://colab.iamvivek.cloud/](https://colab.iamvivek.cloud/)
+- **API:** [https://api-colab.iamvivek.cloud/](https://api-colab.iamvivek.cloud/)
 
 ## 🚀 How to Run
 

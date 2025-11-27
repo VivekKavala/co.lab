@@ -39,7 +39,9 @@ class ConnectionManager:
         await websocket.accept()
         if room_id not in self.active_connections:
             self.active_connections[room_id] = []
-            self.room_code[room_id] = "" # Initialize empty code
+            # Only initialize code if it's not already in memory
+            if room_id not in self.room_code:
+                self.room_code[room_id] = "" 
         self.active_connections[room_id].append(websocket)
         
         # Send current code to the new user
