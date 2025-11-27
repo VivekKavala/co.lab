@@ -12,7 +12,7 @@ const Landing: React.FC = () => {
 
   const createRoom = async () => {
     try {
-      const response = await axios.post('http://localhost:8000/rooms');
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/rooms`);
       const newRoomId = response.data.roomId;
       dispatch(setRoomId(newRoomId));
       navigate(`/room/${newRoomId}`);

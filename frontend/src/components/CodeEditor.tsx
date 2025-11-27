@@ -22,7 +22,9 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ roomId }) => {
 
   useEffect(() => {
     // Connect to WebSocket
-    const ws = new WebSocket(`ws://localhost:8000/ws/${roomId}`);
+    const API_URL = import.meta.env.VITE_API_URL;
+    const WS_URL = API_URL.replace(/^http/, 'ws');
+    const ws = new WebSocket(`${WS_URL}/ws/${roomId}`);
     socketRef.current = ws;
 
     ws.onopen = () => {
@@ -76,7 +78,7 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ roomId }) => {
         const cursorOffset = model.getOffsetAt(position);
 
         try {
-          const response = await axios.post('http://localhost:8000/autocomplete', {
+          const response = await axios.post(`${import.meta.env.VITE_API_URL}/autocomplete`, {
             code: fullCode,
             cursorPosition: cursorOffset,
             language: 'python'
