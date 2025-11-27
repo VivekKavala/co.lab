@@ -18,7 +18,7 @@ app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-    "https://co.lab.iamvivek.cloud",
+    "https://colab.iamvivek.cloud",
     "http://localhost:5173",  # For local Vite development
     "http://localhost:3000",  # Just in case
 ],
