@@ -17,7 +17,11 @@ app = FastAPI()
 # CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+    "https://co.lab.iamvivek.cloud",
+    "http://localhost:5173",  # For local Vite development
+    "http://localhost:3000",  # Just in case
+],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

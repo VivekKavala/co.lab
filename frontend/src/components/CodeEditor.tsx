@@ -66,7 +66,7 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ roomId }) => {
 
     // Register Inline Completions Provider
     monaco.languages.registerInlineCompletionsProvider('python', {
-      provideInlineCompletions: async (model: any, position: any, context: any, token: any) => {
+      provideInlineCompletions: async (model: any, position: any, _context: any, token: any) => {
         // Debounce: Wait 600ms
         await new Promise(resolve => setTimeout(resolve, 600));
 
